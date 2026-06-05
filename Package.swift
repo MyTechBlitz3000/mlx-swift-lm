@@ -9,17 +9,10 @@ let package = Package(
         .iOS(.v17)
     ],
 
-    products: [
-        .library(
-            name: "MLXTest",
-            targets: ["MLXTest"]
-        )
-    ],
-
     dependencies: [
         .package(
             url: "https://github.com/ml-explore/mlx-swift.git",
-            exact: "0.21.2"
+            branch: "main"
         )
     ],
 
@@ -27,7 +20,10 @@ let package = Package(
         .target(
             name: "MLXTest",
             dependencies: [
-                .product(name: "MLX", package: "mlx-swift")
+                .product(
+                    name: "MLX",
+                    package: "mlx-swift"
+                )
             ]
         )
     ]
