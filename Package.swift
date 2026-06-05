@@ -3,35 +3,32 @@
 import PackageDescription
 
 let package = Package(
-    name: "mlx-swift-lm",
-    
+    name: "MLXTest",
+
     platforms: [
         .iOS(.v17)
     ],
-    
+
     products: [
         .library(
-            name: "MLXLLM",
-            targets: ["MLXLLM"]
+            name: "MLXTest",
+            targets: ["MLXTest"]
         )
     ],
-    
+
     dependencies: [
         .package(
             url: "https://github.com/ml-explore/mlx-swift.git",
-            from: "0.31.4"
+            exact: "0.21.2"
         )
     ],
-    
+
     targets: [
         .target(
-            name: "MLXLLM",
+            name: "MLXTest",
             dependencies: [
-                .product(name: "MLX", package: "mlx-swift"),
-                .product(name: "MLXNN", package: "mlx-swift"),
-                .product(name: "MLXOptimizers", package: "mlx-swift")
-            ],
-            path: "Libraries/MLXLLM"
+                .product(name: "MLX", package: "mlx-swift")
+            ]
         )
     ]
 )
